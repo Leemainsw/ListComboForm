@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.productBindingSource;
+            this.comboBox1.DisplayMember = "Name";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "고구마",
-            "감자",
-            "토마토"});
             this.comboBox1.Location = new System.Drawing.Point(12, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(213, 20);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.ValueMember = "Price";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // listBox1
             // 
+            this.listBox1.DataSource = this.productBindingSource;
+            this.listBox1.DisplayMember = "Name";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Items.AddRange(new object[] {
-            "고구마",
-            "감자",
-            "토마토",
-            "배추",
-            "수박",
-            "청과",
-            "마늘",
-            "양파"});
             this.listBox1.Location = new System.Drawing.Point(12, 63);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(269, 76);
             this.listBox1.TabIndex = 1;
+            this.listBox1.ValueMember = "Price";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(ListComboForm.Product);
             // 
             // Form1
             // 
@@ -73,6 +73,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -81,6 +82,7 @@
 
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.BindingSource productBindingSource;
     }
 }
 
